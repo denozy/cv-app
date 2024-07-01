@@ -3,3 +3,12 @@ form {
   flex-direction: column;
   width: 40vw;
 }
+
+textarea {
+  width: "100%";
+  resize: "vertical";
+}
+
+form p {
+  font-size: 12px;
+}

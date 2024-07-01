@@ -1,5 +1,28 @@
 .displayContainer {
   border: 1px solid red;
-  width: 40vw;
+  width: 45vw;
   height: 80vh;
+}
+.general {
+  background-color: lightgrey;
+}
+
+.nameHeader {
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+}
+
+.contactInfo {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 5px;
+}
+.education {
+  padding: 5px;
+  background-color: rgb(136, 171, 171);
+}
+
+.workExperience {
 }

@@ -15,11 +15,12 @@ export default function WorkExperienceForm({ handleInputChange }) {
           type="text"
           placeholder="Title"
         />
-        <input
+        <textarea
           name="responsibilities"
           onChange={handleInputChange}
           type="text"
           placeholder="Responsibilites"
+          rows="4"
         />
         <input
           name="workDate"

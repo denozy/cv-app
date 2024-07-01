@@ -5,7 +5,6 @@ export default function GeneralInformation({ handleInputChange }) {
     <div>
       <form>
         <h2>General Information</h2>
-        <p>Full name</p>
         <input
           name="name"
           onChange={handleInputChange}
@@ -18,6 +17,7 @@ export default function GeneralInformation({ handleInputChange }) {
           type="text"
           placeholder="Email"
         />
+
         <input
           name="phone"
           onChange={handleInputChange}

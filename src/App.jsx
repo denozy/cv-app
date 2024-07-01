@@ -33,7 +33,7 @@ function App() {
         <h1>CV Generator</h1>
       </header>
       <div className={styles.contentContainer}>
-        <div>
+        <div className={styles.formInputs}>
           <GeneralInformation handleInputChange={handleInputChange} />
           <EducationForm handleInputChange={handleInputChange} />
           <WorkExperienceForm handleInputChange={handleInputChange} />
