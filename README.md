@@ -1,0 +1,1 @@
+A cv generator which the user can input personal details into various inputs and have them combined into a neatly formatted CV. 
