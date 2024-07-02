@@ -8,7 +8,7 @@ import styles from "./styles/app.module.css";
 function App() {
   // State to hold form data including work experiences
   const [formData, setFormData] = useState({
-    name: "",
+    name: "Nick D",
     email: "",
     phone: "",
     school: "",
@@ -62,7 +62,10 @@ function App() {
     <div>
       <div className={styles.contentContainer}>
         <div className={styles.formInputs}>
-          <GeneralInformation handleInputChange={handleInputChange} />
+          <GeneralInformation
+            formData={formData}
+            handleInputChange={handleInputChange}
+          />
           <EducationForm handleInputChange={handleInputChange} />
           {/* Mapping through workExperiences to render each WorkExperienceForm */}
           {workExperiences.map((experience, index) => (

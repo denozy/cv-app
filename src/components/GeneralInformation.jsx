@@ -1,5 +1,5 @@
 import styles from "../styles/form.module.css";
-export default function GeneralInformation({ handleInputChange }) {
+export default function GeneralInformation({ formData, handleInputChange }) {
   return (
     <div>
       <form>
@@ -10,7 +10,7 @@ export default function GeneralInformation({ handleInputChange }) {
             name="name"
             onChange={handleInputChange}
             type="text"
-            placeholder="Full name"
+            placeholder={formData.name}
           />
         </div>
         <div className={styles.inputField}>
