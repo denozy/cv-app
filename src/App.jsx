@@ -15,8 +15,23 @@ function App() {
     study: "",
     schoolStart: "", // Added for education details
     schoolEnd: "", // Added for education details
-    workExperiences: [], // Array to hold multiple work experiences
   });
+
+  const [workExperiences, setWorkExperiences] = useState({
+    company: "",
+    title: "",
+    description: "",
+    startDate: "",
+    endDate: "",
+  });
+
+  const handleWorkChange = (e) => {
+    const { name, value } = e.target;
+    setWorkExperiences((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
   // Handler to update form data for all input fields
   const handleInputChange = (e) => {
@@ -27,14 +42,6 @@ function App() {
     }));
   };
 
-  // Handler to add a new work experience to the form data
-  const handleAddExperience = (newExperience) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      workExperiences: [...prevData.workExperiences, newExperience], // Adding new experience to the array
-    }));
-  };
-
   return (
     <div>
       <header>
@@ -42,18 +49,16 @@ function App() {
       </header>
       <div className={styles.contentContainer}>
         <div className={styles.formInputs}>
-          {/* GeneralInformation component for personal details */}
           <GeneralInformation handleInputChange={handleInputChange} />
-          {/* EducationForm component for education details */}
           <EducationForm handleInputChange={handleInputChange} />
-          {/* WorkExperienceForm component for adding work experiences */}
           <WorkExperienceForm
-            handleAddExperience={handleAddExperience} // Pass handleAddExperience to WorkExperienceForm
+            workExperiences={workExperiences}
+            handleWorkChange={handleWorkChange}
+            setWorkExperiences={setWorkExperiences}
           />
         </div>
         <div>
-          {/* CvDisplay component to display the entered data */}
-          <CvDisplay formData={formData} />
+          <CvDisplay formData={formData} workExperiences={workExperiences} />
         </div>
       </div>
     </div>
