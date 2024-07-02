@@ -13,27 +13,43 @@ function App() {
     phone: "",
     school: "",
     study: "",
-    schoolStart: "", // Added for education details
-    schoolEnd: "", // Added for education details
+    schoolStart: "",
+    schoolEnd: "",
   });
 
-  const [workExperiences, setWorkExperiences] = useState({
-    company: "",
-    title: "",
-    description: "",
-    startDate: "",
-    endDate: "",
-  });
+  const [workExperiences, setWorkExperiences] = useState([
+    {
+      company: "",
+      title: "",
+      description: "",
+      startDate: "",
+      endDate: "",
+    },
+  ]);
 
-  const handleWorkChange = (e) => {
+  const handleWorkChange = (e, index) => {
     const { name, value } = e.target;
-    setWorkExperiences((prevData) => ({
-      ...prevData,
+    const newExperiences = [...workExperiences];
+    newExperiences[index] = {
+      ...newExperiences[index],
       [name]: value,
-    }));
+    };
+    setWorkExperiences(newExperiences);
   };
 
-  // Handler to update form data for all input fields
+  const addWorkExperience = () => {
+    setWorkExperiences((prevExperiences) => [
+      ...prevExperiences,
+      {
+        company: "",
+        title: "",
+        description: "",
+        startDate: "",
+        endDate: "",
+      },
+    ]);
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -51,11 +67,17 @@ function App() {
         <div className={styles.formInputs}>
           <GeneralInformation handleInputChange={handleInputChange} />
           <EducationForm handleInputChange={handleInputChange} />
-          <WorkExperienceForm
-            workExperiences={workExperiences}
-            handleWorkChange={handleWorkChange}
-            setWorkExperiences={setWorkExperiences}
-          />
+          {/* Mapping through workExperiences to render each WorkExperienceForm */}
+          {workExperiences.map((experience, index) => (
+            <WorkExperienceForm
+              key={index}
+              index={index} // Pass index as prop to identify each instance
+              workExperiences={experience}
+              handleWorkChange={(e) => handleWorkChange(e, index)}
+            />
+          ))}
+          {/* Button to add a new instance of WorkExperienceForm */}
+          <button onClick={addWorkExperience}>Add Work Experience</button>
         </div>
         <div>
           <CvDisplay formData={formData} workExperiences={workExperiences} />

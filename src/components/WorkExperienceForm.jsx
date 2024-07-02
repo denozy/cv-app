@@ -1,10 +1,12 @@
-import { useState } from "react";
-
 export default function WorkExperienceForm({
   workExperiences,
   handleWorkChange,
-  setWorkExperiences,
+  index,
 }) {
+  const handleChange = (e) => {
+    handleWorkChange(e, index); // Pass index along with name and value
+  };
+
   return (
     <div>
       <h2>Work Experience</h2>
@@ -12,21 +14,21 @@ export default function WorkExperienceForm({
         <input
           name="company"
           value={workExperiences.company}
-          onChange={handleWorkChange}
+          onChange={handleChange}
           type="text"
           placeholder="Company"
         />
         <input
           name="title"
           value={workExperiences.title}
-          onChange={handleWorkChange}
+          onChange={handleChange}
           type="text"
           placeholder="Title"
         />
         <textarea
           name="description"
           value={workExperiences.description}
-          onChange={handleWorkChange}
+          onChange={handleChange}
           placeholder="Description"
           rows="4"
           style={{ width: "100%", resize: "vertical" }}
@@ -34,14 +36,14 @@ export default function WorkExperienceForm({
         <input
           name="startDate"
           value={workExperiences.startDate}
-          onChange={handleWorkChange}
+          onChange={handleChange}
           type="text"
           placeholder="Start Date"
         />
         <input
           name="endDate"
           value={workExperiences.endDate}
-          onChange={handleWorkChange}
+          onChange={handleChange}
           type="text"
           placeholder="End Date"
         />
