@@ -4,7 +4,7 @@
   height: 80vh;
 }
 .general {
-  background-color: lightgrey;
+  background-color: rgb(2, 24, 67);
 }
 
 .nameHeader {
@@ -21,8 +21,11 @@
 }
 .education {
   padding: 5px;
-  background-color: rgb(136, 171, 171);
 }
 
+.educationHeader {
+  width: 100%;
+  text-align: center;
+}
 .workExperience {
 }

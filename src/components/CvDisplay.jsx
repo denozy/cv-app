@@ -13,11 +13,17 @@ export default function CvDisplay({ formData }) {
         </div>
       </div>
       <div className={styles.education}>
+        <div className={styles.educationHeader}>
+          <h2>Education</h2>
+        </div>
         <h3>{formData.school}</h3>
         <p>{formData.study}</p>
-        <p>Completed: {formData.schoolDate}</p>
+        <p>
+          {formData.schoolStart}
+          {formData.schoolEnd ? ` - ${formData.schoolEnd}` : ""}
+        </p>
       </div>
-      <WorkDisplay formData={formData} />
+      <WorkDisplay workExperiences={formData.workExperiences} />
     </div>
   );
 }

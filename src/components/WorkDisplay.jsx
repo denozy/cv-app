@@ -1,5 +1,5 @@
 import styles from "./cvdisplay.module.css";
-export default function WorkDisplay({ formData }) {
+export default function WorkDisplay({ workExperiences }) {
   const formatTextWithLineBreaks = (text) => {
     return text.split("\n").map((line, index) => (
       <span key={index}>
@@ -11,10 +11,16 @@ export default function WorkDisplay({ formData }) {
   return (
     <>
       <div className={styles.workExperience}>
-        <h3>{formData.company}</h3>
-        <h4>{formData.title}</h4>
-        <p>{formatTextWithLineBreaks(formData.responsibilities)}</p>
-        <p>{formData.workDate}</p>
+        {workExperiences.map((experience, index) => (
+          <div key={index} className={styles.workExperience}>
+            <h3>{experience.company}</h3>
+            <p>{experience.position}</p>
+            <p>
+              {experience.startDate} - {experience.endDate}
+            </p>
+            <p>{formatTextWithLineBreaks(experience.description)}</p>
+          </div>
+        ))}
       </div>
     </>
   );

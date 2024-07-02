@@ -16,10 +16,16 @@ export default function EducationForm({ handleInputChange }) {
           placeholder="Study"
         />
         <input
-          name="schoolDate"
+          name="schoolStart"
           onChange={handleInputChange}
           type="text"
-          placeholder="Date"
+          placeholder="Start date"
+        />
+        <input
+          name="schoolEnd"
+          onChange={handleInputChange}
+          type="text"
+          placeholder="End date"
         />
       </form>
     </div>
