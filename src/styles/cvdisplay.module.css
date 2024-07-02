@@ -1,10 +1,11 @@
 .displayContainer {
-  border: 1px solid red;
+  border-radius: 8px;
+  background-color: rgb(34, 44, 65);
   width: 45vw;
   height: 80vh;
 }
 .general {
-  background-color: rgb(2, 24, 67);
+  background-color: rgb(86, 110, 162);
 }
 
 .nameHeader {

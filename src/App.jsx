@@ -3,7 +3,7 @@ import GeneralInformation from "./components/GeneralInformation";
 import EducationForm from "./components/EducationForm";
 import WorkExperienceForm from "./components/WorkExperienceForm";
 import CvDisplay from "./components/CvDisplay";
-import styles from "./app.module.css";
+import styles from "./styles/app.module.css";
 
 function App() {
   // State to hold form data including work experiences
@@ -28,7 +28,7 @@ function App() {
   ]);
 
   const handleWorkChange = (e, index) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target; // Here is where the error occurs
     const newExperiences = [...workExperiences];
     newExperiences[index] = {
       ...newExperiences[index],
@@ -60,9 +60,6 @@ function App() {
 
   return (
     <div>
-      <header>
-        <h1>CV Generator</h1>
-      </header>
       <div className={styles.contentContainer}>
         <div className={styles.formInputs}>
           <GeneralInformation handleInputChange={handleInputChange} />
@@ -77,9 +74,13 @@ function App() {
             />
           ))}
           {/* Button to add a new instance of WorkExperienceForm */}
-          <button onClick={addWorkExperience}>Add Work Experience</button>
+          <div className={styles.btnContainer}>
+            <button className={styles.addWorkBtn} onClick={addWorkExperience}>
+              Add Work Experience
+            </button>
+          </div>
         </div>
-        <div>
+        <div className={styles.cvDisplay}>
           <CvDisplay formData={formData} workExperiences={workExperiences} />
         </div>
       </div>

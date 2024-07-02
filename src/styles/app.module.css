@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(17, 22, 33);
+  color: whitesmoke;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.contentContainer {
+  display: flex;
+  gap: 5vw;
+  margin: 5em;
+}
+
+.formInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+.btnContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.addWorkBtn {
+  border: none;
+  padding: 3px;
+  border-radius: 50px;
+  width: 10em;
+  font-weight: 600;
+  cursor: pointer;
+  color: whitesmoke;
+  background-color: rgb(34, 44, 65);
+}
+
+.cvDisplay {
+}

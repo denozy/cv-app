@@ -1,5 +1,5 @@
 import WorkDisplay from "./WorkDisplay";
-import styles from "./cvdisplay.module.css";
+import styles from "../styles/cvdisplay.module.css";
 export default function CvDisplay({ formData, workExperiences }) {
   return (
     <div className={styles.displayContainer}>
@@ -22,6 +22,9 @@ export default function CvDisplay({ formData, workExperiences }) {
           {formData.schoolStart}
           {formData.schoolEnd ? ` - ${formData.schoolEnd}` : ""}
         </p>
+      </div>
+      <div className={styles.educationHeader}>
+        <h2>Professional Experience</h2>
       </div>
       <WorkDisplay workExperiences={workExperiences} />
     </div>

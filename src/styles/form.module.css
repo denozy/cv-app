@@ -1,0 +1,36 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  background-color: rgb(34, 44, 65);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+textarea {
+  width: "100%";
+  resize: "vertical";
+}
+
+input,
+textarea {
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  padding: 2px;
+  background-color: rgb(13, 27, 56);
+  color: whitesmoke;
+  font-size: 1em;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.inputField {
+}
+
+.inputField p {
+  font-size: 1em;
+}

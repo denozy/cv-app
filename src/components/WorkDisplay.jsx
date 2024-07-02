@@ -1,4 +1,4 @@
-import styles from "./cvdisplay.module.css";
+import styles from "../styles/cvdisplay.module.css";
 
 export default function WorkDisplay({ workExperiences }) {
   const formatTextWithLineBreaks = (text) => {
